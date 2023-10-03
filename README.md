@@ -1,27 +1,39 @@
-# React + TypeScript + Vite
+# Simple Carousel Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Getting Started
 
-Currently, two official plugins are available:
+### Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Make sure you have the following software installed on your machine:
 
-## Expanding the ESLint configuration
+- Node.js and npm (Node Package Manager)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Cloning the Repository
 
-- Configure the top-level `parserOptions` property like this:
+To get started, clone the project's repository to your local machine using the following Git command:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```bash
+git clone https://github.com/k-vassilev/carousel.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Running the Project
+
+Once the project's dependencies are installed, you can start the development server by running the following command:
+
+```
+npm run dev
+```
+
+This will launch the development server, and you can access the carousel component in your web browser at `http://localhost:3000` (or another port if specified).
+
+## Customization
+
+The Simple Carousel Component is customizable. You can adjust its appearance and behavior using the following props:
+
+- `slides` (array of objects): An array of objects, where each object should contain a `url` property with the URL of the image to display in the slide.
+
+- `width` (string): The width of the carousel container. The default value is `"500px"`.
+
+- `height` (string): The height of the carousel container. The default value is `"280px"`.
+
+- `sensitivity` (number): The sensitivity of the swipe gesture for navigating between slides. A higher value makes it more sensitive. The default value is `50`.
