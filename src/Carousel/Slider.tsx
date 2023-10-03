@@ -1,10 +1,5 @@
-import React, { useState } from "react";
-
-interface ImageSliderProps {
-  slides: {
-    url: string;
-  }[];
-}
+import { useState } from "react";
+import { ImageSliderProps } from "./Carousel";
 
 const slideStyles: React.CSSProperties = {
   width: "100%",
@@ -19,7 +14,7 @@ const sliderStyles: React.CSSProperties = {
   height: "100%",
 };
 
-const ImageSlider = ({ slides }: ImageSliderProps) => {
+const Slider = ({ slides, sensitivity = 75 }: ImageSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -45,12 +40,11 @@ const ImageSlider = ({ slides }: ImageSliderProps) => {
 
     const touchX = e.touches[0].clientX;
     const deltaX = touchX - touchStartX;
-    const threshold = 50;
 
-    if (deltaX > threshold) {
+    if (deltaX > sensitivity) {
       goToPrevious();
       setTouchStartX(null);
-    } else if (deltaX < -threshold) {
+    } else if (deltaX < -sensitivity) {
       goToNext();
       setTouchStartX(null);
     }
@@ -69,12 +63,11 @@ const ImageSlider = ({ slides }: ImageSliderProps) => {
     if (!isDragging || touchStartX === null) return;
 
     const mouseDeltaX = e.clientX - touchStartX;
-    const threshold = 50;
 
-    if (mouseDeltaX > threshold) {
+    if (mouseDeltaX > sensitivity) {
       goToPrevious();
       setIsDragging(false);
-    } else if (mouseDeltaX < -threshold) {
+    } else if (mouseDeltaX < -sensitivity) {
       goToNext();
       setIsDragging(false);
     }
@@ -104,4 +97,4 @@ const ImageSlider = ({ slides }: ImageSliderProps) => {
   );
 };
 
-export default ImageSlider;
+export default Slider;
