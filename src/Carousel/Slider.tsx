@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { ImageSliderProps } from "./Carousel";
+import "./index.css"
 
-const slideStyles: React.CSSProperties = {
-  width: "100%",
-  height: "100%",
-  borderRadius: "10px",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-};
+// const slideStyles: React.CSSProperties = {
+//   width: "100%",
+//   height: "100%",
+//   borderRadius: "10px",
+//   backgroundSize: "cover",
+//   backgroundPosition: "center",
+// };
 
 const sliderStyles: React.CSSProperties = {
   position: "relative",
@@ -87,12 +88,23 @@ const Slider = ({ slides, sensitivity = 75 }: ImageSliderProps) => {
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
     >
-      <div
-        style={{
-          ...slideStyles,
-          backgroundImage: `url(${slides[currentIndex].url})`,
-        }}
-      ></div>
+      <div style={{
+    backgroundImage: `url(${slides[currentIndex].minified})`,
+    // background: "#D7FAFC",
+    display: "flex",
+    justifyContent: "space-evenly"
+
+
+  }}className="lazy-load">
+        <img
+          src={slides[currentIndex].url}
+          loading="lazy"
+          alt={slides[currentIndex].alt}
+          style={{
+            maxHeight: "280px",
+          }}
+        />
+      </div>
     </div>
   );
 };

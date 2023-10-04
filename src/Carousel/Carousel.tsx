@@ -1,7 +1,9 @@
 import Slider from "./Slider";
 
 export interface Slide {
-    url: string
+    url: string;
+    minified?: string;
+    alt?: string;
 }
 
 export interface ImageSliderProps {
