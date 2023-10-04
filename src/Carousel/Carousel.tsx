@@ -23,7 +23,7 @@ const Carousel = ({slides, width = "500px", height = "280px", sensitivity}: Imag
 
   return (
     <div style={containerStyles}>
-        <Slider slides={slides} sensitivity = {sensitivity}/>
+        <Slider slides={slides} sensitivity = {sensitivity} height = {height}/>
     </div>
   )
 }
