@@ -1,6 +1,7 @@
+import { Slide } from "./Carousel/Carousel";
 import { img1, img2, img3, img4, img5, img6, img7 } from "./assets";
 
-export const slides = [
+export const slides:Slide[] = [
   {
     url: img1,
     alt: "img1",

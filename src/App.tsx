@@ -4,7 +4,7 @@ import { slides } from "./mockData";
 function App() {
   return (
       <>
-        <Carousel slides={slides} width={"500px"} height={"280px"} sensitivity={75}/>
+        <Carousel slides={slides} width={"300px"} height={"180px"} sensitivity={75}/>
       </>
   );
 }

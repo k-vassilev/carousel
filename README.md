@@ -6,7 +6,7 @@
 
 Make sure you have the following software installed on your machine:
 
-- Node.js and npm (Node Package Manager)
+- Node.js and npm (Node Package Manager) (to run Vite, you need at least version >= 10.16.0)
 
 ### Cloning the Repository
 

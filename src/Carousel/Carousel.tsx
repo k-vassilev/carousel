@@ -18,12 +18,12 @@ const Carousel = ({slides, width = "500px", height = "280px", sensitivity}: Imag
         width: width,
         height: height,
         margin: "0 auto",
-        cursor: "col-resize"
+        cursor: "grab"
       };
 
   return (
     <div style={containerStyles}>
-        <Slider slides={slides} sensitivity = {sensitivity} height = {height}/>
+        <Slider slides={slides} sensitivity = {sensitivity} height = {height} width={width}/>
     </div>
   )
 }
