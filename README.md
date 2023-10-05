@@ -16,6 +16,14 @@ To get started, clone the project's repository to your local machine using the f
 git clone https://github.com/k-vassilev/carousel.git
 ```
 
+### Install dependencies
+
+To run the project install all dependencies via:
+
+```bash
+npm install
+```
+
 ## Running the Project
 
 Once the project's dependencies are installed, you can start the development server by running the following command:
